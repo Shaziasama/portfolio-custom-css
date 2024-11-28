@@ -1,0 +1,393 @@
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color:rgb(216, 105, 105);
+}
+
+.container {
+  max-width: 120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-color:lightblue;
+  padding: 10px 0;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoText {
+  color: purple;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.logoSpan {
+  background-color: #fff;
+  height: 2px;
+  width: 20px;
+}
+
+.navbarLinks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navLink {
+  color:black;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navLink:hover {
+  color: #ff6600;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbarLinks {
+    display: none; /* Hide navbar links on small screens */
+  }
+
+  .hamburger {
+    display: block;
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .hamburger:before, .hamburger:after {
+    content: "";
+    background-color: #fff;
+    height: 3px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+  }
+
+  .hamburger:before {
+    top: -10px;
+  }
+
+  .hamburger:after {
+    bottom: -10px;
+  }
+
+  .navbarLinks.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navLink {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Larger devices */
+@media (min-width: 769px) {
+  .navbarLinks {
+    display: flex;
+  }
+}
+
+
+/* Hero Section */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+.hero-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-left img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-right h2 {
+  font-size: 3rem;
+  color: #00bcd4; /* Cyan color */
+  font-weight: bold;
+}
+
+.hero-right .buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-right .buttons button {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid black;
+  border-radius: 1.5rem;
+  background-color: red;
+  
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-right .buttons button:hover {
+  color: #f44336; /* Red color on hover */
+  border-color: #f44336;
+  
+}
+
+/* Responsive Design */
+
+/* For medium-sized screens (like tablets) */
+@media screen and (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-left img {
+    width: 80%; /* Make the image smaller on smaller screens */
+    height: auto;
+  }
+  
+  .hero-right h2 {
+    font-size: 2.5rem; /* Adjust font size */
+    text-align: center;
+  }
+
+  .hero-right .buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* For smaller screens (like mobile phones) */
+@media screen and (max-width: 480px) {
+  .hero-container {
+    padding: 1rem;
+  }
+
+  .hero-right h2 {
+    font-size: 2rem; /* Make the font size smaller */
+    text-align: center;
+    color: purple;
+  }
+
+  .hero-right .buttons button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    text-decoration: none; /* Make button text smaller */
+    background-color: #f44336;
+    
+  }
+}
+
+
+/* Image Styling */
+.hero-image {
+  width: 100%;
+  max-width: 400px; /* Control max width */
+  height: auto;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+/* Title Styling */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: purple; /* Cyan color */
+  margin-bottom: 1rem;
+}
+
+.title:hover {
+  color: #f44336; /* Red color on hover */
+}
+
+/* Description Styling */
+.description {
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+
+/* For medium-sized screens (tablets) */
+@media screen and (max-width: 768px) {
+  .hero-image {
+    width: 70%; /* Decrease image width */
+  }
+
+  .title {
+    font-size: 2rem; /* Adjust title font size */
+  }
+
+  .description {
+    font-size: 1rem; /* Adjust description font size */
+  }
+}
+
+/* For smaller screens (mobile) */
+@media screen and (max-width: 480px) {
+  .hero-image {
+    width: 80%; /* Decrease image width further */
+  }
+
+  .title {
+    font-size: 1.5rem; /* Adjust title font size */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Adjust description font size */
+  }
+}
+
+/* Title styling */
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #00bcd4; /* Cyan color */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-title:hover {
+  color: #f44336; /* Red color on hover */
+}
+
+/* Description */
+.contact-description {
+  font-size: 1.1rem;
+  color: #a1c4e4;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Form styling */
+.contact-form {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f0f4f8;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  font-size: 1rem;
+  color: #00bcd4;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00bcd4;
+}
+
+.contact-form button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #f44336; /* Red color on hover */
+}
+
+/* Social Icons Styling */
+.contact-social-icons {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contact-social-icons a {
+  color: #00bcd4;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-social-icons a:hover {
+  color: #f44336; /* Red color on hover */
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .contact-title {
+    font-size: 2rem; /* Smaller title */
+  }
+
+  .contact-description {
+    font-size: 1rem; /* Smaller description */
+  }
+
+  .contact-form {
+    width: 90%; /* Make form take up more space */
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+  .contact-title {
+    font-size: 1.5rem; /* Further smaller title */
+  }
+
+  .contact-form button {
+    padding: 1rem; /* Smaller button on mobile */
+  }
+}
